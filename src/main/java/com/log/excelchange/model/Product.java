@@ -4,18 +4,26 @@ import com.alibaba.excel.annotation.ExcelProperty;
 
 public class Product {
 
-    @ExcelProperty(value = {"主标题","货号"}, index = 0)
+    @ExcelProperty(value = "货号", index = 0)
     public String itemNo;
-    @ExcelProperty(value = {"主标题","品名（必填）"}, index = 1)
+    @ExcelProperty(value = "品名（必填）", index = 1)
     public String name;
-    @ExcelProperty(value = {"主标题","条形码"}, index = 3)
+    @ExcelProperty(value = "条形码", index = 3)
     public String barCode;
-    @ExcelProperty(value = {"主标题","规格"}, index = 4)
+    @ExcelProperty(value = "规格", index = 4)
     public String specification;
-    @ExcelProperty(value = {"主标题","进货价"}, index = 13)
+    @ExcelProperty(value = "销售方式", index = 5)
+    public String salesMode = "普通销售"; // 普通销售、称重销售、按数量销售
+    @ExcelProperty(value = "单位", index = 7)
+    public String unit = "件";
+    @ExcelProperty(value = "进货价", index = 13)
     public double purchasingCost;
-    @ExcelProperty(value = {"主标题","零售价（必填）"}, index = 14)
+    @ExcelProperty(value = "零售价（必填）", index = 14)
     public double retailPrice;
+    @ExcelProperty(value = "初始库存", index = 33)
+    public int initialInventory = 1;
+    @ExcelProperty(value = "是否参与折扣", index = 47)
+    public String isDiscount = "参与"; // 参与；不参与
 
     public Product() {
     }
@@ -36,8 +44,12 @@ public class Product {
                 ", name='" + name + '\'' +
                 ", barCode='" + barCode + '\'' +
                 ", specification='" + specification + '\'' +
-                ", purchasingCost='" + purchasingCost + '\'' +
-                ", retailPrice='" + retailPrice + '\'' +
+                ", salesMode='" + salesMode + '\'' +
+                ", unit='" + unit + '\'' +
+                ", purchasingCost=" + purchasingCost +
+                ", retailPrice=" + retailPrice +
+                ", initialInventory=" + initialInventory +
+                ", isDiscount='" + isDiscount + '\'' +
                 '}';
     }
 
@@ -73,6 +85,22 @@ public class Product {
         this.specification = specification;
     }
 
+    public String getSalesMode() {
+        return salesMode;
+    }
+
+    public void setSalesMode(String salesMode) {
+        this.salesMode = salesMode;
+    }
+
+    public String getUnit() {
+        return unit;
+    }
+
+    public void setUnit(String unit) {
+        this.unit = unit;
+    }
+
     public double getPurchasingCost() {
         return purchasingCost;
     }
@@ -87,5 +115,21 @@ public class Product {
 
     public void setRetailPrice(double retailPrice) {
         this.retailPrice = retailPrice;
+    }
+
+    public int getInitialInventory() {
+        return initialInventory;
+    }
+
+    public void setInitialInventory(int initialInventory) {
+        this.initialInventory = initialInventory;
+    }
+
+    public String getIsDiscount() {
+        return isDiscount;
+    }
+
+    public void setIsDiscount(String isDiscount) {
+        this.isDiscount = isDiscount;
     }
 }
