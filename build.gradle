@@ -11,6 +11,11 @@ repositories {
 
 dependencies {
     implementation 'com.alibaba:easyexcel:2.2.11'
+
+    implementation group: 'org.apache.logging.log4j', name: 'log4j-api', version: '2.14.1'
+    implementation group: 'org.apache.logging.log4j', name: 'log4j-core', version: '2.14.1'
+    implementation 'com.lmax:disruptor:3.4.4'
+
 }
 
 test {
