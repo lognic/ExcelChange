@@ -21,9 +21,9 @@ public class Product {
     @ExcelProperty(value = "单位")
     public String unit = "件";
     @ExcelProperty(value = "进货价")
-    public double purchasingCost;
+    public float purchasePrice;
     @ExcelProperty(value = "零售价（必填）")
-    public double retailPrice;
+    public float retailPrice;
     @ExcelProperty(value = "初始库存")
     public int initialInventory = 0;
     @ExcelProperty(value = "库存类型")
@@ -50,18 +50,6 @@ public class Product {
     public String applySeason = "秋冬"; // 通用；春季；夏季；秋季；冬季；春秋；秋冬
     @ExcelProperty(value = "备注")
     public String remark = "备注";
-
-    public Product() {
-    }
-
-    public Product(String itemNo, String name, String barCode, String specification, double purchasingCost, double retailPrice) {
-        this.itemNo = itemNo;
-        this.name = name;
-        this.barCode = barCode;
-        this.specification = specification;
-        this.purchasingCost = purchasingCost;
-        this.retailPrice = retailPrice;
-    }
 
     public String getItemNo() {
         return itemNo;
@@ -111,19 +99,19 @@ public class Product {
         this.unit = unit;
     }
 
-    public double getPurchasingCost() {
-        return purchasingCost;
+    public float getPurchasePrice() {
+        return purchasePrice;
     }
 
-    public void setPurchasingCost(double purchasingCost) {
-        this.purchasingCost = purchasingCost;
+    public void setPurchasePrice(float purchasePrice) {
+        this.purchasePrice = purchasePrice;
     }
 
-    public double getRetailPrice() {
+    public float getRetailPrice() {
         return retailPrice;
     }
 
-    public void setRetailPrice(double retailPrice) {
+    public void setRetailPrice(float retailPrice) {
         this.retailPrice = retailPrice;
     }
 
@@ -240,7 +228,7 @@ public class Product {
                 ", specification='" + specification + '\'' +
                 ", salesMode='" + salesMode + '\'' +
                 ", unit='" + unit + '\'' +
-                ", purchasingCost=" + purchasingCost +
+                ", purchasingCost=" + purchasePrice +
                 ", retailPrice=" + retailPrice +
                 ", initialInventory=" + initialInventory +
                 ", inventoryType='" + inventoryType + '\'' +

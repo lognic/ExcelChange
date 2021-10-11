@@ -10,13 +10,13 @@ public class StockGoods {
     @ExcelProperty("条码")
     public String barCode;
     @ExcelProperty("品名")
-    public String goodsName;
+    public String name;
     @ExcelProperty("规格")
     public String specification;
     @ExcelProperty("数量")
-    public String num;
+    public int num;
     @ExcelProperty("出货单价")
-    public String purchasePrice;
+    public float purchasePrice;
     @ExcelProperty("备注")
     public String remark;
 
@@ -28,12 +28,12 @@ public class StockGoods {
         this.barCode = barCode;
     }
 
-    public String getGoodsName() {
-        return goodsName;
+    public String getName() {
+        return name;
     }
 
-    public void setGoodsName(String goodsName) {
-        this.goodsName = goodsName;
+    public void setName(String name) {
+        this.name = name;
     }
 
     public String getSpecification() {
@@ -44,19 +44,19 @@ public class StockGoods {
         this.specification = specification;
     }
 
-    public String getNum() {
+    public int getNum() {
         return num;
     }
 
-    public void setNum(String num) {
+    public void setNum(int num) {
         this.num = num;
     }
 
-    public String getPurchasePrice() {
+    public float getPurchasePrice() {
         return purchasePrice;
     }
 
-    public void setPurchasePrice(String purchasePrice) {
+    public void setPurchasePrice(float purchasePrice) {
         this.purchasePrice = purchasePrice;
     }
 
@@ -72,7 +72,7 @@ public class StockGoods {
     public String toString() {
         return "StockGoods{" +
                 "barCode='" + barCode + '\'' +
-                ", goodsName='" + goodsName + '\'' +
+                ", name='" + name + '\'' +
                 ", specification='" + specification + '\'' +
                 ", num='" + num + '\'' +
                 ", purchasePrice='" + purchasePrice + '\'' +

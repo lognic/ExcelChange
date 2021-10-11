@@ -26,7 +26,6 @@ public class MyReadListener<T> extends AnalysisEventListener<T> {
 
     @Override
     public void invoke(T data, AnalysisContext context) {
-//        System.out.println("==========>>>" + data);
         dataList.add(data);
     }
 
