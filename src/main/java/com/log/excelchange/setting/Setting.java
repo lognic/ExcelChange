@@ -23,6 +23,8 @@ public class Setting {
     public String outFile = "";
     // 行头的行号(从1开始，具体看excel表)
     public int headRowNumber;
+    // 毛利率
+    public float grossProfitRate = 0.3f;
 
     @Override
     public String toString() {
@@ -36,6 +38,7 @@ public class Setting {
                 ", sourceFile='" + sourceFile + '\'' +
                 ", outFile='" + outFile + '\'' +
                 ", headRowNumber=" + headRowNumber +
+                ", grossProfitRate=" + grossProfitRate +
                 '}';
     }
 }

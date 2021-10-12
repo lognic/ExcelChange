@@ -18,6 +18,7 @@ public class SettingManager {
     public static final String PROP_HEAD_ROW_NUMBER = "headRowNumber";
     public static final String PROP_SOURCE_FILE = "sourceFile";
     public static final String PROP_SOURCE_OUT_FILE = "outFile";
+    public static final String PROP_GROSS_PROFIT_RATE = "grossProfitRate";
 
     public static Setting readSetting() {
         Properties properties = new Properties();
@@ -34,6 +35,7 @@ public class SettingManager {
             setting.headRowNumber = Integer.valueOf(properties.getProperty(PROP_HEAD_ROW_NUMBER));
             setting.sourceFile = properties.getProperty(PROP_SOURCE_FILE);
             setting.outFile = properties.getProperty(PROP_SOURCE_OUT_FILE);
+            setting.grossProfitRate = Float.valueOf(properties.getProperty(PROP_GROSS_PROFIT_RATE));
             Log.info(setting.toString());
             return setting;
         } catch (Exception e) {

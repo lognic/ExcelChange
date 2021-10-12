@@ -1,10 +1,8 @@
 package com.log.excelchange;
 
-import com.alibaba.excel.EasyExcel;
 import com.log.excelchange.constant.Constant;
 import com.log.excelchange.excel.ExcelManager;
 import com.log.excelchange.excel.IReadResultListener;
-import com.log.excelchange.excel.RemarkWriterHandler;
 import com.log.excelchange.log.Log;
 import com.log.excelchange.model.Product;
 import com.log.excelchange.model.StockGoods;
@@ -73,7 +71,11 @@ public class Main {
                     product.barCode = goods.barCode;
                     product.specification = goods.specification;
                     product.purchasePrice = goods.purchasePrice;
-                    product.retailPrice = goods.purchasePrice * 1.3f; // 零售价默认是进货价1.3倍（毛利30%）
+                    float purchasePrice = goods.purchasePrice * (1.0f + setting.grossProfitRate);// 零售价默认是进货价1.3倍（毛利30%）
+                    if (purchasePrice < 0) {
+                        purchasePrice = 0;
+                    }
+                    product.retailPrice = purchasePrice;
                     product.initialInventory = goods.num;
                     product.remark = goods.remark;
                     productList.add(product);
